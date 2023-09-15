@@ -75,8 +75,7 @@ public class Main {
         baseE2.setBaseSalary(200000);
         baseE2.displayInfo();
 
-        BasePlusCommisionEmployee baseE3 = new BasePlusCommisionEmployee(12,"Tzuyu", new Date(20,10,2015),
-                new Date(23,4,1999));
+        BasePlusCommisionEmployee baseE3 = new BasePlusCommisionEmployee();
         baseE3.setEmpId(12);
         baseE3.setEmpName("Tzuyu");
         baseE3.setEmpDateHired(32,10,2015);         //day > 31 set to default 1
