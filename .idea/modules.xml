@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AccountChallenge/AccountChallenge.iml" filepath="$PROJECT_DIR$/AccountChallenge/AccountChallenge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EmployeeProject/EmployeeProject.iml" filepath="$PROJECT_DIR$/EmployeeProject/EmployeeProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyTime/MyTime.iml" filepath="$PROJECT_DIR$/MyTime/MyTime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Pasco_OOP-Activites.iml" filepath="$PROJECT_DIR$/.idea/Pasco_OOP-Activites.iml" />
+    </modules>
+  </component>
+</project>
