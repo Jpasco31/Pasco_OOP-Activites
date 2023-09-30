@@ -21,10 +21,10 @@ public class Main {
 
         isAdded = list.addEmployee(new HourlyEmployee());
         System.out.println("Added Employee = " + isAdded);
-        ((HourlyEmployee)list.empList[list.getCount() - 1]).setEmpId(6);
-        ((HourlyEmployee)list.empList[list.getCount() - 1]).setEmpName(new Name("Ms", "Sana", "Minatozaki", "Twice", "Junior"));
-        ((HourlyEmployee)list.empList[list.getCount() - 1]).setEmpDateHired(new Date(26,7,-2019));  //year is negative so set to default 2023
-        ((HourlyEmployee)list.empList[list.getCount() - 1]).setEmpBirthDate(15,5,1997);
+        (list.empList[list.getCount() - 1]).setEmpId(6);
+        (list.empList[list.getCount() - 1]).setEmpName(new Name("Ms", "Sana", "Minatozaki", "Twice", "Junior"));
+        (list.empList[list.getCount() - 1]).setEmpDateHired(new Date(26,7,-2019));  //year is negative so set to default 2023
+        (list.empList[list.getCount() - 1]).setEmpBirthDate(15,5,1997);
         ((HourlyEmployee)list.empList[list.getCount() - 1]).setTotalHoursWorked(45);
         ((HourlyEmployee)list.empList[list.getCount() - 1]).setRatePerHour(40);   //negative rate per hour so set to default 0
 
@@ -41,10 +41,10 @@ public class Main {
 
         isAdded = list.addEmployee(new PieceWorkerEmployee());
         System.out.println("Added Employee = " + isAdded);
-        ((PieceWorkerEmployee)list.empList[list.getCount() - 1]).setEmpId(8);
-        ((PieceWorkerEmployee)list.empList[list.getCount() - 1]).setEmpName(new Name("Mr","Jeongyeon", "Yoo", "Twice", "II"));
-        ((PieceWorkerEmployee)list.empList[list.getCount() - 1]).setEmpDateHired(new Date(20,10,-2015));  //year is negative so set to default 2023
-        ((PieceWorkerEmployee)list.empList[list.getCount() - 1]).setEmpBirthDate(1,11,1996);
+        (list.empList[list.getCount() - 1]).setEmpId(8);
+        (list.empList[list.getCount() - 1]).setEmpName(new Name("Mr","Jeongyeon", "Yoo", "Twice", "II"));
+        (list.empList[list.getCount() - 1]).setEmpDateHired(new Date(20,10,-2015));  //year is negative so set to default 2023
+        (list.empList[list.getCount() - 1]).setEmpBirthDate(1,11,1996);
         ((PieceWorkerEmployee)list.empList[list.getCount() - 1]).setTotalPiecesFinished(105);
         ((PieceWorkerEmployee)list.empList[list.getCount() - 1]).setRatePerPiece(-60);             //negative rate per piece so set to default 0
 
@@ -60,10 +60,10 @@ public class Main {
 
         isAdded = list.addEmployee(new CommissionEmployee());
         System.out.println("Added Employee = " + isAdded);
-        ((CommissionEmployee)list.empList[list.getCount() - 1]).setEmpId(10);
-        ((CommissionEmployee)list.empList[list.getCount() - 1]).setEmpName(new Name("Dr", "Dahyun", "Kim", "Twice", "IV"));
-        ((CommissionEmployee)list.empList[list.getCount() - 1]).setEmpDateHired(20,20,-2015);          //month > 12 so set to default 1 and year < 0 set to default 2023
-        ((CommissionEmployee)list.empList[list.getCount() - 1]).setEmpBirthDate(new Date(28,5,1998));
+        (list.empList[list.getCount() - 1]).setEmpId(10);
+        (list.empList[list.getCount() - 1]).setEmpName(new Name("Dr", "Dahyun", "Kim", "Twice", "IV"));
+        (list.empList[list.getCount() - 1]).setEmpDateHired(20,20,-2015);          //month > 12 so set to default 1 and year < 0 set to default 2023
+        (list.empList[list.getCount() - 1]).setEmpBirthDate(new Date(28,5,1998));
         ((CommissionEmployee)list.empList[list.getCount() - 1]).setTotalSales(900000);
 
 
@@ -80,10 +80,10 @@ public class Main {
 
         isAdded = list.addEmployee(new BasePlusCommissionEmployee());
         System.out.println("Added Employee = " + isAdded);
-        ((BasePlusCommissionEmployee)list.empList[list.getCount() - 1]).setEmpId(12);
-        ((BasePlusCommissionEmployee)list.empList[list.getCount() - 1]).setEmpName(new Name("Lady","Tzuyu","Chou", "Twice", "FIFTH"));
-        ((BasePlusCommissionEmployee)list.empList[list.getCount() - 1]).setEmpDateHired(32,10,2015);         //day > 31 set to default 1
-        ((BasePlusCommissionEmployee)list.empList[list.getCount() - 1]).setEmpBirthDate(24,6,1999);
+        (list.empList[list.getCount() - 1]).setEmpId(12);
+        (list.empList[list.getCount() - 1]).setEmpName(new Name("Lady","Tzuyu","Chou", "Twice", "FIFTH"));
+        (list.empList[list.getCount() - 1]).setEmpDateHired(32,10,2015);         //day > 31 set to default 1
+        (list.empList[list.getCount() - 1]).setEmpBirthDate(24,6,1999);
         ((BasePlusCommissionEmployee)list.empList[list.getCount() - 1]).setTotalSales(800000);
         ((BasePlusCommissionEmployee)list.empList[list.getCount() - 1]).setBaseSalary(-10000);                   //base salary < 0 set to default 0
 
