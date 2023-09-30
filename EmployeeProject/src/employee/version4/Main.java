@@ -13,10 +13,12 @@ public class Main {
 
         isAdded = list.addEmployee( new HourlyEmployee(5, new Name("Nayeon", "Im", "Twice", "Senior"), new Date(24,6,2022),
                 new Date(22,9,1995)));
+        System.out.println("Added Employee = " + isAdded);
         ((HourlyEmployee)list.empList[list.getCount() - 1]).setTotalHoursWorked(70);
         ((HourlyEmployee)list.empList[list.getCount() - 1]).setRatePerHour(300);
 
         isAdded = list.addEmployee(new HourlyEmployee());
+        System.out.println("Added Employee = " + isAdded);
         ((HourlyEmployee)list.empList[list.getCount() - 1]).setEmpId(6);
         ((HourlyEmployee)list.empList[list.getCount() - 1]).setEmpName(new Name("Ms", "Sana", "Minatozaki", "Twice", "Junior"));
         ((HourlyEmployee)list.empList[list.getCount() - 1]).setEmpDateHired(new Date(26,7,-2019));  //year is negative so set to default 2023
@@ -27,14 +29,16 @@ public class Main {
         //PIECE WORKER EMPLOYEE
         isAdded = list.addEmployee( new PieceWorkerEmployee(2, new Name("John", "Pasco", "Clam"), new Date(22,3,2021),
                 new Date(8,10,2002), 251, 60));
-
+        System.out.println("Added Employee = " + isAdded);
 
         isAdded = list.addEmployee( new PieceWorkerEmployee(7, new Name("Momo", "Hirai", "Twice", "Senior"), new Date(26,7,2023),
                 new Date(9,11,1996)));
+        System.out.println("Added Employee = " + isAdded);
         ((PieceWorkerEmployee)list.empList[list.getCount() - 1]).setRatePerPiece(50);
         ((PieceWorkerEmployee)list.empList[list.getCount() - 1]).setTotalPiecesFinished(312);
 
         isAdded = list.addEmployee(new PieceWorkerEmployee());
+        System.out.println("Added Employee = " + isAdded);
         ((PieceWorkerEmployee)list.empList[list.getCount() - 1]).setEmpId(8);
         ((PieceWorkerEmployee)list.empList[list.getCount() - 1]).setEmpName(new Name("Mr","Jeongyeon", "Yoo", "Twice", "II"));
         ((PieceWorkerEmployee)list.empList[list.getCount() - 1]).setEmpDateHired(new Date(20,10,-2015));  //year is negative so set to default 2023
@@ -45,12 +49,15 @@ public class Main {
         //Commission Employee
         isAdded = list.addEmployee(new CommissionEmployee(3, new Name("Joe", "Pasco", "Clam"), new Date(19,5,2019),
                 new Date(18,9,1996), 250000));
+        System.out.println("Added Employee = " + isAdded);
 
         isAdded = list.addEmployee(new CommissionEmployee(9, new Name("Mina", "Myoui", "Twice", "III"), new Date(26,7,2023),
                 new Date(24,3,1997)));
+        System.out.println("Added Employee = " + isAdded);
         ((CommissionEmployee)list.empList[list.getCount() - 1]).setTotalSales(90000);
 
         isAdded = list.addEmployee(new CommissionEmployee());
+        System.out.println("Added Employee = " + isAdded);
         ((CommissionEmployee)list.empList[list.getCount() - 1]).setEmpId(10);
         ((CommissionEmployee)list.empList[list.getCount() - 1]).setEmpName(new Name("Dr", "Dahyun", "Kim", "Twice", "IV"));
         ((CommissionEmployee)list.empList[list.getCount() - 1]).setEmpDateHired(20,20,-2015);          //month > 12 so set to default 1 and year < 0 set to default 2023
@@ -61,13 +68,16 @@ public class Main {
         //Base Plus Commission Employee
         isAdded = list.addEmployee(new BasePlusCommissionEmployee(4, new Name("Jihyo", "Park", "Twice"), new Date(18,8,2023),
                 new Date(1,2,1997), 700000, 150000));
+        System.out.println("Added Employee = " + isAdded);
 
         isAdded = list.addEmployee(new BasePlusCommissionEmployee(11, new Name("Chaeyoung","Son", "Twice", "FOURTH"), new Date(20,10,2015),
                 new Date(23,4,1999)));
+        System.out.println("Added Employee = " + isAdded);
         ((BasePlusCommissionEmployee)list.empList[list.getCount() - 1]).setTotalSales(80000);
         ((BasePlusCommissionEmployee)list.empList[list.getCount() - 1]).setBaseSalary(200000);
 
         isAdded = list.addEmployee(new BasePlusCommissionEmployee());
+        System.out.println("Added Employee = " + isAdded);
         ((BasePlusCommissionEmployee)list.empList[list.getCount() - 1]).setEmpId(12);
         ((BasePlusCommissionEmployee)list.empList[list.getCount() - 1]).setEmpName(new Name("Lady","Tzuyu","Chou", "Twice", "FIFTH"));
         ((BasePlusCommissionEmployee)list.empList[list.getCount() - 1]).setEmpDateHired(32,10,2015);         //day > 31 set to default 1
