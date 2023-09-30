@@ -37,7 +37,7 @@ public class PieceWorkerEmployee extends Employee {
         this.ratePerPiece = ratePerPiece > 0 ? ratePerPiece : 0;
     }
 
-    public float computeSalary(){
+    public double computeSalary(){
         int bonus = totalPiecesFinished / 100;
         return (totalPiecesFinished * ratePerPiece) + (bonus * (ratePerPiece * 10));
     }
