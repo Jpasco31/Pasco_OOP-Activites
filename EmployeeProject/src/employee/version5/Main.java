@@ -2,6 +2,7 @@ package employee.version5;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("VERSION 5\n");
 
         EmployeeRoster list = new EmployeeRoster();
         boolean isAdded = false;
