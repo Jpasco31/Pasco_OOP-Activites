@@ -3,7 +3,7 @@ package employee.version4;
 import java.util.Objects;
 
 public class EmployeeRoster {
-    public Employee[] empList;
+    private Employee[] empList;
     private int count = 0;
     private int max = 0;
 
