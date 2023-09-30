@@ -3,7 +3,7 @@ package employee.version4;
 import java.util.Objects;
 
 public class EmployeeRoster {
-    private Employee[] empList;
+    Employee[] empList;
     private int count = 0;
     private int max = 0;
 
@@ -20,6 +20,10 @@ public class EmployeeRoster {
 
     public Employee[] getEmpList() {
         return empList;
+    }
+
+    public Employee getCurrentIndex(){
+        return empList[count-1];
     }
 
     public int getCount() {
@@ -155,10 +159,11 @@ public class EmployeeRoster {
 
     public EmployeeRoster getEmployee(String name){
         EmployeeRoster list = new EmployeeRoster(this.count);
-        for(int i = 0; i <= this.count; i++){
-            if(Objects.equals(name, empList[i].getEmpName().getFirstName())
-                    || Objects.equals(name, empList[i].getEmpName().getLastName())
-                    || Objects.equals(name, empList[i].getEmpName().getMiddleName()) ){
+        name = name.toLowerCase();
+        for(int i = 0; i < this.count; i++){
+            if(Objects.equals(name, empList[i].getEmpName().getFirstName().toLowerCase())
+                    || Objects.equals(name, empList[i].getEmpName().getLastName().toLowerCase())
+                    || Objects.equals(name, empList[i].getEmpName().getMiddleName().toLowerCase()) ){
                 list.addEmployee(empList[i]);
             }
         }
