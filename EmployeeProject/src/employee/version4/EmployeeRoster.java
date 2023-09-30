@@ -22,10 +22,6 @@ public class EmployeeRoster {
         return empList;
     }
 
-    public Employee getCurrentIndex(){
-        return empList[count-1];
-    }
-
     public int getCount() {
         return count;
     }
