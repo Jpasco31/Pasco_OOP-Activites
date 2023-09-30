@@ -5,6 +5,8 @@ public class Main {
 
         EmployeeRoster list = new EmployeeRoster(20);
         boolean isAdded = false;
+        boolean isDeleted = false;
+        boolean isUpdated = false;
 
         //HOURLY EMPLOYEE
         isAdded = list.addEmployee(new HourlyEmployee(1,new Name("Jericho", "Pasco", "Clam"), new Date(21,4,2020),
@@ -99,19 +101,24 @@ public class Main {
         list.displayBPCE();
         System.out.println("Count Base Plus Commission Employee = " + list.countBPEC() + "\n");
 
-        list.deleteEmployee(3); //ID: - Joe C. Pasco delete
+        isDeleted = list.deleteEmployee(3); //ID: - Joe C. Pasco delete
+        System.out.println("Is deleted = " + isDeleted);
         System.out.println("DISPLAY ALL EMPLOYEE AFTER DELETE Employee ID = 3");
         list.displayAllEmployee();
         System.out.println("Count of total employees after delete Employee = " + list.getCount() + "\n"); //11
 
-        list.updateEmployee(1, new Name("Jericho", "Clam", "Baldago"), 10, 20); // ID 1 - New middlename, lastname, rate per hour and total hours worked
-        list.updateEmployee(4, new Name("Jihyo", "Park", "Solo"), 800000, 250000); // ID 3 - New middle name, new totalsales, new base salaray
-        list.updateEmployee(7, new Name("Momo", "Hirai", "Misamo"), 100, 312); // ID 7 - New middle name and new rate per piece
-        list.updateEmployee(10, new Name("Dahyun", "Park", "Twice"), 500000); // ID 10 - New lastname and totalSales
+        isUpdated = list.updateEmployee(1, new Name("Jericho", "Clam", "Baldago"), 10, 20); // ID 1 - New middlename, lastname, rate per hour and total hours worked
+        System.out.println("Is Updated = " + isUpdated);
+        isUpdated = list.updateEmployee(4, new Name("Jihyo", "Park", "Solo"), 800000, 250000); // ID 3 - New middle name, new totalsales, new base salaray
+        System.out.println("Is Updated = " + isUpdated);
+        isUpdated = list.updateEmployee(7, new Name("Momo", "Hirai", "Misamo"), 100, 312); // ID 7 - New middle name and new rate per piece
+        System.out.println("Is Updated = " + isUpdated);
+        isUpdated = list.updateEmployee(10, new Name("Dahyun", "Park", "Twice"), 500000); // ID 10 - New lastname and totalSales
+        System.out.println("Is Updated = " + isUpdated);
         System.out.println("DISPLAY ALL EMPLOYEE AFTER Update Employee IDs : 1, 4, 7, 10");
         list.displayAllEmployee();
 
-        EmployeeRoster twiceEmpList = list.getEmployee("Twice");       //Get all employees with "Twice" in there names
+        EmployeeRoster twiceEmpList = list.getEmployee("Twice");       //Get all employees with "Twice" in their names
         System.out.println("\nAll Employees with Twice in there name");
         twiceEmpList.displayAllEmployee();
         System.out.println("Count of max employees in TwiceEmpList = " + twiceEmpList.getMax()); //11

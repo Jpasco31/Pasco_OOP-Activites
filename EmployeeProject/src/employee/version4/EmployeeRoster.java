@@ -166,39 +166,33 @@ public class EmployeeRoster {
         return list;
     }
 
-    // Update method for CommissionEmployee
+    // Update method for CE
     public boolean updateEmployee(int id, Name newName, double totalSales) {
         for (int i = 0; i < this.count; i++) {
             if (id == empList[i].getEmpId() && empList[i] instanceof CommissionEmployee) {
-                CommissionEmployee commissionEmployee = (CommissionEmployee) empList[i];
-                commissionEmployee.setEmpName(newName);
-                commissionEmployee.setTotalSales(totalSales);
+                ((CommissionEmployee) empList[i]).setEmpName(newName);
+                ((CommissionEmployee) empList[i]).setTotalSales(totalSales);
                 return true;
             }
         }
         return false;
     }
 
+    //Update method for HE, PWE, BPCE
     public boolean updateEmployee(int id, Name newName, double rateOrSales, double additionalInfo) {
         for (int i = 0; i < this.count; i++) {
             if (id == empList[i].getEmpId()) {
                 empList[i].setEmpName(newName);
 
                 if (empList[i] instanceof HourlyEmployee) {
-                    HourlyEmployee hourlyEmployee = (HourlyEmployee) empList[i];
-                    hourlyEmployee.setRatePerHour((float)rateOrSales);
-                    hourlyEmployee.setTotalHoursWorked((float)additionalInfo);
-                    // Recalculate salary or perform other HourlyEmployee-specific operations
+                    ((HourlyEmployee) empList[i]).setRatePerHour((float)rateOrSales);
+                    ((HourlyEmployee) empList[i]).setTotalHoursWorked((float)additionalInfo);
                 } else if (empList[i] instanceof BasePlusCommissionEmployee) {
-                    BasePlusCommissionEmployee basePlusEmployee = (BasePlusCommissionEmployee) empList[i];
-                    basePlusEmployee.setTotalSales(rateOrSales);
-                    basePlusEmployee.setBaseSalary(additionalInfo);
-                    // Recalculate salary or perform other BasePlusCommissionEmployee-specific operations
+                    ((BasePlusCommissionEmployee) empList[i]).setTotalSales(rateOrSales);
+                    ((BasePlusCommissionEmployee) empList[i]).setBaseSalary(additionalInfo);
                 } else if (empList[i] instanceof PieceWorkerEmployee) {
-                    PieceWorkerEmployee pieceWorkerEmployee = (PieceWorkerEmployee) empList[i];
-                    pieceWorkerEmployee.setRatePerPiece((float)rateOrSales);
-                    pieceWorkerEmployee.setTotalPiecesFinished((int) additionalInfo);
-                    // Recalculate salary or perform other PieceWorkerEmployee-specific operations
+                    ((PieceWorkerEmployee) empList[i]).setRatePerPiece((float)rateOrSales);
+                    ((PieceWorkerEmployee) empList[i]).setTotalPiecesFinished((int) additionalInfo);
                 }
                 return true;
             }
