@@ -101,7 +101,7 @@ public class EmployeeRoster {
         System.out.println("HOURLY EMPLOYEE LIST");
         for(int i = 0; i < this.count; i++){
             if(empList[i] instanceof HourlyEmployee){
-                ((HourlyEmployee) empList[i]).displayInfo();
+                empList[i].displayInfo();
             }
         }
     }
@@ -109,7 +109,7 @@ public class EmployeeRoster {
     public void displayPWE(){
         for(int i = 0; i < this.count; i++){
             if(empList[i] instanceof PieceWorkerEmployee){
-                ((PieceWorkerEmployee) empList[i]).displayInfo();
+                empList[i].displayInfo();
             }
         }
     }
@@ -117,7 +117,7 @@ public class EmployeeRoster {
     public void displayCE(){
         for(int i = 0; i < this.count; i++){
             if(empList[i] instanceof CommissionEmployee && !(empList[i] instanceof BasePlusCommissionEmployee)){
-                ((CommissionEmployee) empList[i]).displayInfo();
+                empList[i].displayInfo();
             }
         }
     }
@@ -125,7 +125,7 @@ public class EmployeeRoster {
     public void displayBPCE(){
         for(int i = 0; i < this.count; i++){
             if(empList[i] instanceof BasePlusCommissionEmployee){
-                ((BasePlusCommissionEmployee) empList[i]).displayInfo();
+                empList[i].displayInfo();
             }
         }
     }
@@ -170,7 +170,7 @@ public class EmployeeRoster {
     public boolean updateEmployee(int id, Name newName, double totalSales) {
         for (int i = 0; i < this.count; i++) {
             if (id == empList[i].getEmpId() && empList[i] instanceof CommissionEmployee) {
-                ((CommissionEmployee) empList[i]).setEmpName(newName);
+                empList[i].setEmpName(newName);
                 ((CommissionEmployee) empList[i]).setTotalSales(totalSales);
                 return true;
             }

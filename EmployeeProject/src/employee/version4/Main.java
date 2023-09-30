@@ -21,7 +21,7 @@ public class Main {
 
         isAdded = list.addEmployee(new HourlyEmployee());
         System.out.println("Added Employee = " + isAdded);
-        (list.empList[list.getCount() - 1]).setEmpId(6);
+        ((HourlyEmployee)list.empList[list.getCount() - 1]).setEmpId(6);
         (list.empList[list.getCount() - 1]).setEmpName(new Name("Ms", "Sana", "Minatozaki", "Twice", "Junior"));
         (list.empList[list.getCount() - 1]).setEmpDateHired(new Date(26,7,-2019));  //year is negative so set to default 2023
         (list.empList[list.getCount() - 1]).setEmpBirthDate(15,5,1997);
