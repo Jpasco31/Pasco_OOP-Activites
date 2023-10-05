@@ -36,6 +36,10 @@ public class Employee {
         this.empName = empName;
     }
 
+    public void setEmpName(String firstName, String lastName, String middleName) {
+        this.empName = new Name(firstName, lastName, middleName);
+    }
+
     public Date getEmpDateHired() {
         return empDateHired;
     }

@@ -108,21 +108,23 @@ public class Main {
         list.displayAllEmployee();
         System.out.println("Count of total employees after delete Employee = " + list.getCount() + "\n"); //11
 
-        isUpdated = list.updateEmployee(1, new Name("Jericho", "Clam", "Baldago"), 10, 20); // ID 1 - New middlename, lastname, rate per hour and total hours worked
+        isUpdated = list.updateEmployee(1, "Jericho", "Clam", "Baldago", 10, 20); // ID 1 - New middlename, lastname, rate per hour and total hours worked
         System.out.println("Is Updated = " + isUpdated);
-        isUpdated = list.updateEmployee(4, new Name("Jihyo", "Park", "Solo"), 800000, 250000); // ID 3 - New middle name, new totalsales, new base salaray
+        isUpdated = list.updateEmployee(4, "Jihyo", "Park", "Solo", 800000, 250000); // ID 3 - New middle name, new totalsales, new base salaray
         System.out.println("Is Updated = " + isUpdated);
-        isUpdated = list.updateEmployee(7, new Name("Momo", "Hirai", "Misamo"), 100, 312); // ID 7 - New middle name and new rate per piece
+        isUpdated = list.updateEmployee(7, "Momo", "Hirai", "Misamo", 100, 312); // ID 7 - New middle name and new rate per piece
         System.out.println("Is Updated = " + isUpdated);
-        isUpdated = list.updateEmployee(10, new Name("Dahyun", "Park", "Twice"), 500000); // ID 10 - New lastname and totalSales
+        isUpdated = list.updateEmployee(10, "Dahyun", "Park", "Twice", 500000); // ID 10 - New lastname and totalSales
         System.out.println("Is Updated = " + isUpdated);
+        isUpdated = list.updateEmployee(100, "Jericho", "Clam", "Baldago", 10, 20); // false no ID 100
+        System.out.println("Is Updated = " + isUpdated); //false
         System.out.println("DISPLAY ALL EMPLOYEE AFTER Update Employee IDs : 1, 4, 7, 10");
         list.displayAllEmployee();
 
-        EmployeeRoster twiceEmpList = list.getEmployee("Twice");       //Get all employees with "Twice" in their names
-        System.out.println("\nAll Employees with Twice in there name");
-        twiceEmpList.displayAllEmployee();
-        System.out.println("Count of max employees in TwiceEmpList = " + twiceEmpList.getMax()); //11
-        System.out.println("Count of total employees with 'Twice' in there name = " + twiceEmpList.getCount() + "\n"); //7
+        EmployeeRoster getEmpList = list.getEmployee("Tw");       //Get all employees with "Twice" in their names
+        System.out.println("\nAll Employees with Tw in there name");
+        getEmpList.displayAllEmployee();
+        System.out.println("Count of max employees in getEmpList = " + getEmpList.getMax()); //11
+        System.out.println("Count of total employees with 'Tw' in there name and ID = " + getEmpList.getCount() + "\n"); //7
     }
 }

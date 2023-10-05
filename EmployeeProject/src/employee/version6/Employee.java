@@ -32,6 +32,10 @@ public abstract class Employee {
         return empName;
     }
 
+    public void setEmpName(String firstName, String lastName, String middleName) {
+        this.empName = new Name(firstName, lastName, middleName);
+    }
+
     public void setEmpName(Name empName) {
         this.empName = empName;
     }

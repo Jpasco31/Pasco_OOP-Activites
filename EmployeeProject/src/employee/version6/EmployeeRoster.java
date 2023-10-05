@@ -1,6 +1,7 @@
 package employee.version6;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class EmployeeRoster {
 
@@ -109,51 +110,97 @@ public class EmployeeRoster {
         return empList.removeIf(employee -> employee.getEmpId() == id);
     }
 
-    public EmployeeRoster getEmployee(String name){
+    public EmployeeRoster getEmployee(String word){
         EmployeeRoster list = new EmployeeRoster();
-        name = name.toLowerCase();
+        word = word.toLowerCase();
         for(Employee employee : empList){
-            String fullName = employee.getEmpName().getFirstName().toLowerCase() + " " +
-                    employee.getEmpName().getMiddleName().toLowerCase() + " " +
+            String idPlusName = employee.getEmpId() + employee.getEmpName().getFirstName().toLowerCase() +
+                    employee.getEmpName().getMiddleName().toLowerCase() +
                     employee.getEmpName().getLastName().toLowerCase();
 
-            if (fullName.contains(name)) {
+            if (idPlusName.contains(word)) {
                 list.addEmployee(employee);
             }
         }
         return list;
     }
 
-    // Update method for CommissionEmployee
-    public boolean updateEmployee(int id, Name newName, double totalSales) {
-        for(Employee employee : empList){
-            if (id == employee.getEmpId() && employee instanceof CommissionEmployee) {
-                employee.setEmpName(newName);
-                ((CommissionEmployee) employee).setTotalSales(totalSales);
-                return true;
+    //private method update Employee Name
+    private boolean updateEmployeeName(int id, String newFirstName, String newLastName,  String newMiddleName) {
+        boolean changes = false;
+        for (Employee employee : empList) {
+            if (id == employee.getEmpId()) {
+                if (!Objects.equals(newFirstName,employee.getEmpName().getFirstName()) || !Objects.equals(newFirstName, "")) {
+                    employee.getEmpName().setFirstName(newFirstName);
+                    changes = true;
+                }
+                if (!Objects.equals(newLastName, employee.getEmpName().getLastName()) || !Objects.equals(newLastName, "")) {
+                    employee.getEmpName().setLastName(newLastName);
+                    changes = true;
+                }
+                if (!Objects.equals(newMiddleName, employee.getEmpName().getMiddleName()) || !Objects.equals(newLastName, "")) {
+                    employee.getEmpName().setMiddleName(newMiddleName);
+                    changes = true;
+                }
+                return changes;
             }
         }
-        return false;
+        return changes;
     }
 
-    public boolean updateEmployee(int id, Name newName, double rateOrSales, double additionalInfo) {
+    // Update method for CommissionEmployee
+    public boolean updateEmployee(int id, String newFirstName, String newLastName, String newMiddleName, double totalSales) {
+        boolean changes = false;
         for(Employee employee : empList){
-            if (id == employee.getEmpId()) {
-                employee.setEmpName(newName);
-
-                if (employee instanceof HourlyEmployee) {
-                    ((HourlyEmployee) employee).setRatePerHour((float)rateOrSales);
-                    ((HourlyEmployee) employee).setTotalHoursWorked((float)additionalInfo);
-                } else if (employee instanceof BasePlusCommissionEmployee) {
-                    ((BasePlusCommissionEmployee) employee).setTotalSales(rateOrSales);
-                    ((BasePlusCommissionEmployee)employee).setBaseSalary(additionalInfo);
-                } else if (employee instanceof PieceWorkerEmployee) {
-                    ((PieceWorkerEmployee) employee).setRatePerPiece((float)rateOrSales);
-                    ((PieceWorkerEmployee) employee).setTotalPiecesFinished((int) additionalInfo);
+            if (id == employee.getEmpId() && employee instanceof CommissionEmployee) {
+                changes = updateEmployeeName(id, newFirstName, newLastName, newMiddleName);
+                if(totalSales != ((CommissionEmployee) employee).getTotalSales()){
+                    ((CommissionEmployee) employee).setTotalSales(totalSales);
+                    changes = true;
                 }
-                return true;
+                return changes;
             }
         }
-        return false;
+        return changes;
+    }
+
+    public boolean updateEmployee(int id, String newFirstName, String newLastName, String newMiddleName, double rateOrSales, double additionalInfo) {
+        boolean changes = false;
+        for(Employee employee : empList){
+            if(id == employee.getEmpId()){
+                changes = updateEmployeeName(id, newFirstName, newLastName, newMiddleName);
+
+                if (employee instanceof HourlyEmployee) {
+                    if(rateOrSales != ((HourlyEmployee)employee).getRatePerHour()){
+                        ((HourlyEmployee) employee).setRatePerHour((float)rateOrSales);
+                        changes = true;
+                    }
+                    if(additionalInfo != ((HourlyEmployee) employee).getTotalHoursWorked()){
+                        ((HourlyEmployee) employee).setTotalHoursWorked((float)additionalInfo);
+                        changes = true;
+                    }
+                } else if (employee instanceof BasePlusCommissionEmployee) {
+                    if(rateOrSales !=  ((BasePlusCommissionEmployee) employee).getTotalSales()){
+                        ((BasePlusCommissionEmployee) employee).setTotalSales(rateOrSales);
+                        changes = true;
+                    }
+                    if(additionalInfo != ((BasePlusCommissionEmployee) employee).getBaseSalary()){
+                        ((BasePlusCommissionEmployee) employee).setBaseSalary(additionalInfo);
+                        changes = true;
+                    }
+                } else if (employee instanceof PieceWorkerEmployee) {
+                    if( rateOrSales != ((PieceWorkerEmployee) employee).getRatePerPiece()){
+                        ((PieceWorkerEmployee) employee).setRatePerPiece((float)rateOrSales);
+                        changes = true;
+                    }
+                    if(additionalInfo !=  ((PieceWorkerEmployee) employee).getTotalPiecesFinished()){
+                        ((PieceWorkerEmployee) employee).setTotalPiecesFinished((int) additionalInfo);
+                        changes = true;
+                    }
+                }
+                return changes;
+            }
+        }
+        return changes;
     }
 }
