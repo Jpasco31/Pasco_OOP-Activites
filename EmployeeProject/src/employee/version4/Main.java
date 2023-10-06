@@ -118,6 +118,8 @@ public class Main {
         System.out.println("Is Updated = " + isUpdated);
         isUpdated = list.updateEmployee(100, "Jericho", "Clam", "Baldago", 10, 20); // false no ID 100
         System.out.println("Is Updated = " + isUpdated); //false
+        isUpdated = list.updateEmployee(1, "Jericho", "Clam", "Baldago", 10, 20); // ID 1 - New middlename, lastname, rate per hour and total hours worked
+        System.out.println("Is Updated = " + isUpdated); //false nothing is updated
         System.out.println("DISPLAY ALL EMPLOYEE AFTER Update Employee IDs : 1, 4, 7, 10");
         list.displayAllEmployee();
 

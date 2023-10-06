@@ -172,15 +172,15 @@ public class EmployeeRoster {
         boolean changes = false;
         for (int i = 0; i < this.count; i++) {
             if (id == empList[i].getEmpId()) {
-                if (!Objects.equals(newFirstName, empList[i].getEmpName().getFirstName()) || !Objects.equals(newFirstName, "")) {
+                if (!Objects.equals(newFirstName, empList[i].getEmpName().getFirstName()) || Objects.equals(newFirstName, "")) {
                     empList[i].getEmpName().setFirstName(newFirstName);
                     changes = true;
                 }
-                if (!Objects.equals(newLastName, empList[i].getEmpName().getLastName()) || !Objects.equals(newLastName, "")) {
+                if (!Objects.equals(newLastName, empList[i].getEmpName().getLastName()) || Objects.equals(newLastName, "")) {
                     empList[i].getEmpName().setLastName(newLastName);
                     changes = true;
                 }
-                if (!Objects.equals(newMiddleName, empList[i].getEmpName().getMiddleName()) || !Objects.equals(newLastName, "")) {
+                if (!Objects.equals(newMiddleName, empList[i].getEmpName().getMiddleName()) || Objects.equals(newLastName, "")) {
                     empList[i].getEmpName().setMiddleName(newMiddleName);
                     changes = true;
                 }
