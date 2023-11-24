@@ -5,3 +5,4 @@ Activities
 1 - Class Challenge Account
 2 - MyTime Activity
 3- Employee Project
+4 - Exception Handling Activities (ExceptionEx1 and ShoppingCart)
